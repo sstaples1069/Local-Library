@@ -78,7 +78,13 @@ function getMostPopularAuthors(books=[], authors=[]) {
     const obj = {name:fullName, count:total};
     result.push(obj)
   })
-  return result.sort((authorA,authorB)=> authorB.count - authorA.count).slice(0,5)
+  // helper function
+  function sorterFunction(resultArr=[]){
+    const sortedResult = resultArr.sort((authorA,authorB)=> authorB.count - authorA.count).slice(0,5)
+    return sortedResult
+  }
+  return sorterFunction(result)
+  // return result.sort((authorA,authorB)=> authorB.count - authorA.count).slice(0,5)
 }
 
 module.exports = {

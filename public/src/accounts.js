@@ -15,9 +15,10 @@ function getTotalNumberOfBorrows(account={}, books=[]) {
   //reduce - put in callback function: (()=>{},0)<-init value
   let total = books.reduce((acc,bookObj)=>{
     const {borrows} = bookObj
-    borrows.forEach(borrow => {
-      if(borrow.id===id) acc++      
+    const filtered = borrows.filter(borrow => {
+      return borrow.id===id      
     });
+    acc += filtered.length;
     return acc
   },0)
   return total

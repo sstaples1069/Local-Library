@@ -1,13 +1,13 @@
-function findAuthorById(authors, id) {
+function findAuthorById(authors=[], id="") {
   return authors.find((authorObj)=> authorObj.id === id
   )
 }
 
-function findBookById(books, id) {
+function findBookById(books=[], id="") {
   return books.find((bookObj)=> bookObj.id === id)
 }
 
-function partitionBooksByBorrowedStatus(books) {
+function partitionBooksByBorrowedStatus(books=[]) {
   // create arrays to hold objs
   const checkedOut = [];
   const inStock = [];
